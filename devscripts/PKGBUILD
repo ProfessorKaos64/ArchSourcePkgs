@@ -21,12 +21,12 @@ makedepends=('po4a' 'perl-timedate' 'perl-libwww' 'docbook-xsl' 'perl-file-deskt
 options=('!makeflags')
 source=(http://ftp.debian.org/debian/pool/main/d/${pkgname}/${pkgname}_${pkgver}.tar.xz fixes.patch)
 install='devscripts.install'
-md5sums=('38aa190b6978be31bfe4a15eefc54633'
+md5sums=('310a0e0a7fcf21a86f3ad860124b0b60'
          '046df590290194cb1e47a0fe9cc37d83')
 
 build() {
   cd $srcdir/$pkgname-$pkgver
-  #patch -p0 -i ../fixes.patch
+  patch -p0 -i ../fixes.patch
   make
 }
 
