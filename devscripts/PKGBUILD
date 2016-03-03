@@ -4,9 +4,12 @@
 # Contributor: Charles Pigott <charlespigott@googlemail.com>
 # Contributor: André Klitzing <aklitzing@online.de>
 # Contributor: JD Horelick <jdhore1@gmail.com>
+# Contributor: ProfessorKaos64 <mdeguzis@gmail.com>
+
+# Sources: http://ftp.debian.org/debian/pool/main/d/devscripts/devscripts*.tar.xz
 
 pkgname=devscripts
-pkgver=2.15.8
+pkgver=2.16.1
 pkgrel=1
 pkgdesc="Scripts to make the life of a Debian Package maintainer easier"
 arch=('any')
@@ -23,7 +26,7 @@ md5sums=('38aa190b6978be31bfe4a15eefc54633'
 
 build() {
   cd $srcdir/$pkgname-$pkgver
-  patch -p0 -i ../fixes.patch
+  #patch -p0 -i ../fixes.patch
   make
 }
 
