@@ -1,5 +1,5 @@
---- a/po4a/Makefile
-+++ b/po4a/Makefile
+--- po4a/Makefile
++++ po4a/Makefile
 @@ -28,7 +28,7 @@ de/%.de.1: de/%.de.pod translate
  	pod2man --utf8 --center=" " --release="Debian-Hilfswerkzeuge" $< > $@
  de/%.de.1: de/%.de.dbk translate
@@ -18,8 +18,8 @@
  # xsltproc writes out to foo.1 even if you tell it to do otherwise, so we have
  # to rename the file after it's generated
  	mv fr/$*.1 $@
---- a/scripts/Makefile
-+++ b/scripts/Makefile
+--- scripts/Makefile
++++ scripts/Makefile
 @@ -63,7 +63,7 @@ endif
  	pod2man --utf8 --center=" " --release="Debian Utilities" $< > $@
  %.1: %.dbk

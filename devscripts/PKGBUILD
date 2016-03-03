@@ -10,6 +10,7 @@
 
 pkgname=devscripts
 pkgver=2.16.1
+conflicts=('bash-completion')
 pkgrel=1
 pkgdesc="Scripts to make the life of a Debian Package maintainer easier"
 arch=('any')
@@ -19,10 +20,10 @@ depends=('dpkg' 'wget' 'sed' 'perl' 'debianutils' 'debhelper')
 optdepends=('sensible-utils: for sensible alternative selection')
 makedepends=('po4a' 'perl-timedate' 'perl-libwww' 'docbook-xsl' 'perl-file-desktopentry' 'perl-file-basedir' 'perl-parse-debcontrol' 'python-setuptools')
 options=('!makeflags')
-source=(http://ftp.debian.org/debian/pool/main/d/${pkgname}/${pkgname}_${pkgver}.tar.xz fixes.patch)
+source=(http://ftp.debian.org/debian/pool/main/d/${pkgname}/${pkgname}_${pkgver}.tar.xz patch-devscripts-v2.16.1)
 install='devscripts.install'
 md5sums=('310a0e0a7fcf21a86f3ad860124b0b60'
-         '046df590290194cb1e47a0fe9cc37d83')
+         'b83333072a807005b5c31eb0f73095b0')
 
 build() {
   cd $srcdir/$pkgname-$pkgver

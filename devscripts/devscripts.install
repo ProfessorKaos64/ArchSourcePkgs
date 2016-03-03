@@ -2,7 +2,6 @@ post_install() {
 	ln -s /usr/bin/debchange /usr/bin/dch
 }
 
-
 post_remove() {
 	rm /usr/bin/dch	
 }
