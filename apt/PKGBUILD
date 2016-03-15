@@ -110,4 +110,13 @@ package() {
   install -m 644 include/apt-private/* $pkgdir/usr/include/apt-private/
 }
 
+makepkgclean () {
+	echo "--> Cleaning up makepkg files..."
+	makepkg -code
+	echo "--> Removing any AUR tarballs left out..."
+	find . -name '*.src.tar.gz' -exec rm {} \;
+	echo "--> Removing any created packages..."
+	find . -name '*.pkg.tar.xz' -exec rm {} \;
+}
+
 # vim:set ts=2 sw=2 et:
