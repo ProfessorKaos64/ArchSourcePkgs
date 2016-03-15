@@ -41,3 +41,12 @@ package() {
   cd $srcdir/$pkgname-$pkgver
   make DESTDIR=$pkgdir install
 }
+
+makepkgclean () {
+	echo "--> Cleaning up makepkg files..."
+	makepkg -code
+	echo "--> Removing any AUR tarballs left out..."
+	find . -name '*.src.tar.gz' -exec rm {} \;
+	echo "--> Removing any created packages..."
+	find . -name '*.pkg.tar.xz' -exec rm {} \;
+}
