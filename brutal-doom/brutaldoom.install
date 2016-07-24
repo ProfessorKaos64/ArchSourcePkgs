@@ -1,16 +1,16 @@
 post_install() {
-    echo "Run 'zandronum' to initialize: (Click cancel after it fails to open if required)
+    echo "Run 'gzdoom' to initialize: (Click cancel after it fails to open if required)
 
-	zandronum 
+	gzdoom 
 
 Ensure all of your existing .wad files use lowercase only, no UpperCase allowed.
-Now copy your existing .wad files to ~/.zandronum/:
+Now copy your existing .wad files to ~/.gzdoom/:
 
-    $ cp *.wad ~/.zandronum/
+    $ cp *.wad ~/.gzdoom/
 
-Now copy zandronum.ini to ~/.zandronum/:
+Now copy gzdoom.ini to ~/.gzdoom/:
 
-    $ cp /usr/share/games/brutaldoom/zandronum.ini ~/.zandronum/zandronum.ini
+    $ cp /usr/share/games/brutaldoom/gzdoom.ini ~/.gzdoom/gzdoom.ini
 
 Good to go!"
 
