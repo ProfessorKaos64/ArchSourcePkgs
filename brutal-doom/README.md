@@ -11,37 +11,37 @@ https://www.youtube.com/watch?v=nzsG2sLc7dk&t=1m31s
 Includes:
 ---------
 
-[Version 18a][9]
+[Version 20b][9]
 
 [Doom Metal Soundtrack Mod Volume 4][10]
 
 Depends:
 --------
 
-    pacaur -S zandronum doomseeker
+    pacaur -S gzdoom doomseeker
 
 Install:
 --------
 
-	mkdir -p ~/abs/brutal18a
-	cd ~/abs/brutal18a
-    wget https://raw.github.com/idk/brutaldoom/master/PKGBUILD && wget https://raw.github.com/idk/brutaldoom/master/brutaldoom.install && makepkg -sfi
+	mkdir -p ~/abs/brutal20b
+	cd ~/abs/brutal20b
+    wget https://raw.github.com/idk/brutaldoom/master/PKGBUILD && wget https://raw.github.com/idk/brutaldoom/master/brutal-doom.install && makepkg -sfi
 
 Setup:
 ------
 
-Run 'zandronum' to initialize: (Click cancel after it fails to open if required)
+Run 'gzdoom' to initialize: (Click cancel after it fails to open if required)
 
-    zandronum
+    gzdoom
 
 Ensure all of your existing .wad files use lowercase only, no UpperCase allowed.
 Now copy your existing .wad files to ~/.zandronum/:
     
-    cp *.wad ~/.zandronum/
+    cp *.wad ~/.config/gzdoom/
 
-Now copy zandronum.ini to ~/.zandronum/:
+Now copy zandronum.ini to ~/.config/gzdoom/:
 
-    cp /usr/share/games/brutaldoom/zandronum.ini ~/.zandronum/zandronum.ini
+    cp /usr/share/games/brutal-doom/gzdoom.ini ~/.config/gzdoom/gzdoom.ini
 
 Usage:
 ------
@@ -52,13 +52,6 @@ Or for Multiplayer:
 -------------------
 
     doomseeker &
-
-Hashes:
--------
-
-    brutalv018a.zip c940afc94317937b9b91da071440053d426b82a43d9f756aa2b3c899d7e966da06cc2d4226258f5b074ea2da780043a5cecfa2e0ba9e21d4c0aee14d282e8d60
-    
-    DoomMetalVol4.zip b1180910025e8b8f065c56518fb1556678ef5c6062dc527e1f3e54dfa039e82f8e49bb1997ccf06a07e451576fbe35c321773eb7dbb7f62b1654b59cb9e07f32
 
 Contributing:
 -------------
@@ -72,9 +65,6 @@ Contributing:
 
 SHARE AND ENJOY!
 ----------------
-
-I have nothing to do with making this mod I only make package for my Arch Linux. :)
- Is version 18a cause I cannot get 19 to work, some error about something or other. :P
 
 [linuxdistrocommunity][6]
 
