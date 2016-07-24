@@ -10,7 +10,7 @@ Now copy your existing .wad files to ~/.gzdoom/:
 
 Now copy gzdoom.ini to ~/.gzdoom/:
 
-    $ cp /usr/share/games/brutaldoom/gzdoom.ini ~/.gzdoom/gzdoom.ini
+    $ cp /usr/share/games/brutal-doom/gzdoom.ini ~/.gzdoom/gzdoom.ini
 
 Good to go!"
 
