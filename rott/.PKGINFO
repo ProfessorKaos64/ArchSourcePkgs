@@ -1,0 +1,17 @@
+pkgname = rott-svn
+pkgver = 287-1
+pkgdesc = SDL-Port of Rise of the Triad. Rise of the Triad is a high quality, fast scrolling first-person perspective 3D action game. It includes a lot of destructive enemies, an arsenal of weapons from simple pistols to missile launchers, life-preserving armor, traps and ambushes galore. The HUNT Begins" shareware episode.
+url = http://icculus.org/rott
+builddate = 1469412488
+packager = ProfessorKaos64
+arch = x86_64
+size = 1585884
+license = GPL2
+depend = glibc>=2.14
+depend = sdl>=1.2.11
+depend = sdl_mixer
+optdepend = game-data-packager
+optdepend = kdebase-keditbookmarks
+optdepend = opera
+optdepend = xorg-appres
+optdepend = zenity

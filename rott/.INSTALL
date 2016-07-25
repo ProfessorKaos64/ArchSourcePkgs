@@ -1,0 +1,46 @@
+pre_install() {
+    
+    if [ "$1" = "install" ] || [ "$1" = "upgrade" ]
+    then
+      if dpkg --compare-versions "$2" lt-nl "1.1.2-3~"
+      then
+    update-alternatives --quiet --remove rott /usr/bin/rott-superrott
+    update-alternatives --quiet --remove rott /usr/bin/rott-sitelicense
+      fi
+    fi
+    
+    
+}
+
+post_install() {
+    
+    if [ "$1" = "abort-upgrade" ] || [ "$1" = "configure" ]
+    then
+      update-alternatives --quiet --install /usr/bin/rott rott /usr/bin/rott-shareware  30
+      update-alternatives --quiet --install /usr/bin/rott rott /usr/bin/rott-commercial 20
+    fi
+    
+    
+    
+    exit 0
+}
+
+pre_upgrade() {
+    pre_install
+}
+
+post_upgrade() {
+    post_install
+}
+
+pre_remove() {
+    
+    if [ "$1" = "remove" ] || [ "$1" = "deconfigure" ]
+    then
+      update-alternatives --quiet --remove-all rott
+    fi
+    
+    
+    
+    exit 0
+}
