@@ -1,11 +1,11 @@
 # Maintainer: Michael DeGuzis <mdeguzis@gmail.com>
 
-pkgname=vkquake
+pkgname=vkQuake
 pkgver=0.1.0
 pkgrel=1
 pkgdesc="A modern Quake 1 engine. Forked from Fitzquake. This version contains Vulkan API support."
 arch=('i686' 'x86_64')
-url="https://github.com/Novum/vkQuake"
+url="https://github.com/Novum/vkquake"
 license=('GPL2')
 depends=(
 'flac' 'glibc' 'libgl' 'libmad' 'libmikmod' 'libogg' 
