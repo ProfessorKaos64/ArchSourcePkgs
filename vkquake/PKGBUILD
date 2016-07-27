@@ -1,5 +1,6 @@
 # Maintainer: Michael DeGuzis <mdeguzis@gmail.com>
 # Needs a lot of improvement!
+# TODO: add md5sums when finished
 
 pkgname=vkquake
 pkgver=0.1.0
@@ -14,8 +15,12 @@ depends=(
 )
 install=$pkgname.install
 source=("git+https://github.com/Novum/vkquake"
-	vkquake.desktop)
+	vkquake.desktop
+	vkquake.png
+	vkquake.1)
 md5sums=('SKIP'
+	 'SKIP'
+	 'SKIP'
 	 'SKIP')
 
 build() {
@@ -41,8 +46,15 @@ build() {
 }
 
 package() {
+
   cd "$srcdir/$pkgname/Quake/"
+
+  # main binary
   install -Dm755 quakespasm "$pkgdir"/usr/bin/$pkgname
 
-  install -Dm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
+  # supplemental files
+  install -Dm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/
+  install -Dm644 $srcdir/$pkgname.png $pkgdir/usr/share/pixmaps/
+  install -Dm644 $srcdir/$pkgname.1 /usr/share/man/man1/
+  
 }
