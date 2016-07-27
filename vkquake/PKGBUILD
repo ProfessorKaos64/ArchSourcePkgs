@@ -1,0 +1,49 @@
+# Maintainer: Michael DeGuzis <mdeguzis@gmail.com>
+
+pkgname=vkquake
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="A modern Quake 1 engine. Forked from Fitzquake. This version contains Vulkan API support."
+arch=('i686' 'x86_64')
+url="https://github.com/Novum/vkQuake"
+license=('GPL2')
+depends=(
+'flac' 'glibc' 'libgl' 'libmad' 'libmikmod' 'libogg' 
+'libvorbis' 'libx11' 'opusfile' 'sdl2' 'vulkan-validation-layers'
+)
+install=$pkgname.install
+source=("git+https://github.com/Novum/vkQuake")
+md5sums=('SKIP')
+
+build() {
+  
+  cd "$srcdir/$pkgname-$pkgver"
+
+  # clean
+  msg "Cleaning make files"
+  make -C Quake clean
+
+  msg "Starting make..."
+  make -C Quake \
+		$(maybe_debug) \
+		STRIP=": do not strip:" \
+		DO_USERDIRS=1 \
+		USE_SDL2=1 \
+		USE_CODEC_FLAC=1 \
+		USE_CODEC_OPUS=1 \
+		USE_CODEC_MIKMOD=1 \
+		USE_CODEC_UMX=1
+  make -C Misc/qs_pak
+
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver/Quake/"
+  install -Dm755 quakespasm "$pkgdir"/usr/bin/$pkgname
+  
+  for i in 16 24 32 48 64 72; do
+    install -Dm644 $srcdir/$pkgname-$pkgver/Misc/QuakeSpasm_512.png $pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/quakespasm.png
+  done
+
+  install -Dm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
+}
