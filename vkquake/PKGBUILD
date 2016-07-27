@@ -1,6 +1,6 @@
 # Maintainer: Michael DeGuzis <mdeguzis@gmail.com>
 
-pkgname=vkQuake
+pkgname=vkquake
 pkgver=0.1.0
 pkgrel=1
 pkgdesc="A modern Quake 1 engine. Forked from Fitzquake. This version contains Vulkan API support."
