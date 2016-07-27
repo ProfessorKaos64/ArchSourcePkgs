@@ -12,7 +12,7 @@ depends=(
 'libvorbis' 'libx11' 'opusfile' 'sdl2' 'vulkan-validation-layers'
 )
 install=$pkgname.install
-source=("git+https://github.com/Novum/vkQuake")
+source=("git+https://github.com/Novum/vkquake")
 md5sums=('SKIP')
 
 build() {
