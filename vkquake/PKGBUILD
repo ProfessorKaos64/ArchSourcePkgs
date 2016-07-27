@@ -17,7 +17,7 @@ md5sums=('SKIP')
 
 build() {
   
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname"
 
   # clean
   msg "Cleaning make files"
