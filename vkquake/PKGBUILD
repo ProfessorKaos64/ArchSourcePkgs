@@ -1,4 +1,5 @@
 # Maintainer: Michael DeGuzis <mdeguzis@gmail.com>
+# Needs a lot of improvement!
 
 pkgname=vkquake
 pkgver=0.1.0
@@ -12,8 +13,10 @@ depends=(
 'libvorbis' 'libx11' 'opusfile' 'sdl2' 'vulkan-validation-layers'
 )
 install=$pkgname.install
-source=("git+https://github.com/Novum/vkquake")
-md5sums=('SKIP')
+source=("git+https://github.com/Novum/vkquake"
+	vkquake.desktop)
+md5sums=('SKIP'
+	 'SKIP')
 
 build() {
   
@@ -38,12 +41,8 @@ build() {
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver/Quake/"
+  cd "$srcdir/$pkgname/Quake/"
   install -Dm755 quakespasm "$pkgdir"/usr/bin/$pkgname
-  
-  for i in 16 24 32 48 64 72; do
-    install -Dm644 $srcdir/$pkgname-$pkgver/Misc/QuakeSpasm_512.png $pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/quakespasm.png
-  done
 
   install -Dm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
 }
