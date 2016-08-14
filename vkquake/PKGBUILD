@@ -41,7 +41,7 @@ build() {
 		USE_CODEC_OPUS=1 \
 		USE_CODEC_MIKMOD=1 \
 		USE_CODEC_UMX=1
-  make -C Misc/qs_pak
+  make -C Misc/vq_pak
 
 }
 
@@ -50,7 +50,7 @@ package() {
   cd "$srcdir/$pkgname/Quake/"
 
   # main binary
-  install -Dm755 quakespasm "$pkgdir"/usr/bin/$pkgname
+  install -Dm755 vkquake "$pkgdir"/usr/bin/$pkgname
 
   # supplemental files
   install -Dm644 "$srcdir/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop" 
