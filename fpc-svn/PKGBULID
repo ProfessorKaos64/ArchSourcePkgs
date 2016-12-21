@@ -1,5 +1,5 @@
-# Maintainer: Michael DeGuzis <mdeguzis@gmail.com>
-# Prior Maintainer: L <alaviss 0 at gmail dot com>
+# Maintainer: L <alaviss 0 at gmail dot com>
+# Contributor: Michael DeGuzis <mdeguzis@gmail.com>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Valeriy Lyasotskiy <onestep@ukr.net>
 # Contributor: Jan Willemson <janwil@hot.ee>
@@ -61,6 +61,7 @@ build() {
   msg2 "Building docs"
   cd "${srcdir}/fpcbuild/fpcdocs"
   [[ $_docs=1 ]] && make ${MAKEFLAGS} html
+
 }
 
 package_fpc-svn() {
@@ -71,11 +72,11 @@ package_fpc-svn() {
   conflicts=(fpc)
   provides=(fpc)
 
-  cd "${srcdir}/fpcbuild/fpcsrc"
+  cd "${srcdir}/fpcbuild"
   export HOME="$srcdir"
 
   msg2 "Installing compiler"
-  make -j1 PREFIX="${pkgdir}/usr" install NOGDB=1 OPT=" -Xs -XX -CX -dRelease"
+  make -j1 PREFIX="${pkgdir}/usr" OPT=" -Xs -XX -CX -dRelease -dNOGDB" install
 
   export PATH="$pkgdir/usr/bin:$PATH"
 
